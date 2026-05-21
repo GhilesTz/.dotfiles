@@ -1,0 +1,156 @@
+.theme-dark {
+  --accent-h: 352;
+  --accent-s: 79%;
+  --accent-l: 51%;
+
+  --background-primary: #0d0d0d;
+  --background-primary-alt: #0a0a0a;
+  --background-secondary: #0a0a0a;
+  --background-secondary-alt: #080808;
+  --background-modifier-border: #2a2a2a;
+  --background-modifier-form-field: #1a1a1a;
+  --background-modifier-form-field-highlighted: #2a2a2a;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.5);
+  --background-modifier-success: #d4956a;
+  --background-modifier-error: #e63946;
+  --background-modifier-error-rgb: 230, 57, 70;
+  --background-modifier-error-hover: #ff4d5a;
+  --background-modifier-cover: rgba(13, 13, 13, 0.8);
+
+  --text-normal: #c8b8a8;
+  --text-muted: #7a7a7a;
+  --text-faint: #5a5a5a;
+  --text-on-accent: #f5e6d6;
+  --text-on-accent-inverted: #0d0d0d;
+  --text-error: #e63946;
+  --text-error-hover: #ff4d5a;
+  --text-highlight-bg: rgba(196, 30, 58, 0.25);
+  --text-highlight-bg-active: rgba(196, 30, 58, 0.4);
+  --text-selection: rgba(196, 30, 58, 0.4);
+  --text-accent: #e63946;
+  --text-accent-hover: #ff4d5a;
+
+  --interactive-normal: #1a1a1a;
+  --interactive-hover: #2a2a2a;
+  --interactive-accent: #c41e3a;
+  --interactive-accent-rgb: 196, 30, 58;
+  --interactive-accent-hover: #e63946;
+
+  --scrollbar-bg: rgba(13, 13, 13, 0);
+  --scrollbar-thumb-bg: rgba(122, 122, 122, 0.2);
+  --scrollbar-active-thumb-bg: rgba(196, 30, 58, 0.4);
+
+  --titlebar-background: #0a0a0a;
+  --titlebar-background-focused: #0a0a0a;
+  --titlebar-text-color: #c8b8a8;
+
+  --tab-text-color: #5a5a5a;
+  --tab-text-color-active: #e0d0c0;
+  --tab-text-color-focused: #e0d0c0;
+  --tab-text-color-focused-active: #e0d0c0;
+  --tab-background-active: #0d0d0d;
+
+  --nav-item-color: #c8b8a8;
+  --nav-item-color-hover: #e0d0c0;
+  --nav-item-color-active: #e63946;
+  --nav-item-background-hover: #1a1a1a;
+  --nav-item-background-active: rgba(196, 30, 58, 0.15);
+
+  --tag-color: #d4956a;
+  --tag-color-hover: #e8a87c;
+  --tag-background: rgba(212, 149, 106, 0.12);
+  --tag-background-hover: rgba(212, 149, 106, 0.2);
+
+  --link-color: #e63946;
+  --link-color-hover: #ff4d5a;
+  --link-external-color: #d94e6a;
+  --link-external-color-hover: #e0566b;
+  --link-unresolved-color: #8b3a4a;
+  --link-unresolved-opacity: 0.8;
+
+  --code-normal: #e8a87c;
+  --code-comment: #5a5a5a;
+  --code-function: #e63950;
+  --code-keyword: #c41e3a;
+  --code-string: #d4956a;
+  --code-value: #e8a87c;
+  --code-tag: #c41e3a;
+  --code-property: #c8b8a8;
+  --code-punctuation: #8b3a4a;
+  --code-background: #0a0a0a;
+
+  --bold-color: #e0d0c0;
+  --italic-color: #d4956a;
+
+  --blockquote-border-color: #c41e3a;
+
+  --h1-color: #e63946;
+  --h2-color: #e0566b;
+  --h3-color: #d94e6a;
+  --h4-color: #d4956a;
+  --h5-color: #e8a87c;
+  --h6-color: #c8b8a8;
+
+  --table-header-background: #0a0a0a;
+  --table-header-background-hover: #1a1a1a;
+  --table-row-even-background: #0a0a0a;
+  --table-row-odd-background: #0d0d0d;
+
+  --checkbox-color: #c41e3a;
+  --checkbox-color-hover: #e63946;
+  --checkbox-border-color: #2a2a2a;
+
+  --list-marker-color: #c41e3a;
+
+  --collapse-icon-color: #5a5a5a;
+  --collapse-icon-color-collapsed: #c41e3a;
+
+  --graph-line: rgba(122, 122, 122, 0.2);
+  --graph-node: #c8b8a8;
+  --graph-node-focused: #e63946;
+  --graph-node-tag: #d4956a;
+  --graph-node-attachment: #e8a87c;
+  --graph-node-unresolved: #5a5a5a;
+
+  --cursor: #e0d0c0;
+}
+
+/* Additional refinements */
+.theme-dark .markdown-preview-view {
+  font-family: inherit;
+}
+
+.theme-dark .cm-s-obsidian .cm-cursor {
+  border-left-color: #e0d0c0;
+}
+
+.theme-dark .suggestion-item.is-selected {
+  background-color: rgba(196, 30, 58, 0.2);
+}
+
+.theme-dark .menu-item:hover {
+  background-color: #1a1a1a;
+}
+
+.theme-dark .modal-container .modal {
+  background-color: #0d0d0d;
+  border: 1px solid #2a2a2a;
+}
+
+.theme-dark .prompt {
+  background-color: #0d0d0d;
+  border: 1px solid #2a2a2a;
+}
+
+.theme-dark .prompt-input {
+  background-color: #1a1a1a;
+}
+
+.theme-dark hr {
+  border-color: #2a2a2a;
+}
+
+.theme-dark mark {
+  background-color: rgba(196, 30, 58, 0.3);
+  color: #e0d0c0;
+}

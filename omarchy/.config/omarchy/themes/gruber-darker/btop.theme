@@ -1,0 +1,71 @@
+# All graphs and meters can be gradients
+# For single color graphs leave "mid" and "end" variable empty.
+# Use "start" and "end" variables for two color gradient
+# Use "start", "mid" and "end" for three color gradient
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#101010"
+
+# Main text color
+theme[main_fg]="#e4e4e4"
+
+theme[title]="#e4e4e4"
+
+theme[hi_fg]="#f43841"
+
+theme[selected_bg]="#181818"
+
+theme[selected_fg]="#e4e4e4"
+
+theme[inactive_fg]="#484848"  
+
+theme[graph_text]="#e4e4e4"
+
+theme[proc_misc]="#73d936"
+
+theme[cpu_box]="#282828"
+
+theme[mem_box]="#282828"
+
+theme[net_box]="#282828"
+
+theme[proc_box]="#282828"
+
+theme[div_line]="#282828"
+
+theme[temp_start]="#73d936"
+theme[temp_mid]="#ffdd33"
+theme[temp_end]="#f43841"
+
+theme[cpu_start]="#73d936"
+theme[cpu_mid]="#ffdd33"
+theme[cpu_end]="#f43841"
+
+theme[free_start]="#f43841"
+theme[free_mid]="#ffdd33"
+theme[free_end]="#73d936"
+
+theme[cached_start]="#73d936"
+theme[cached_mid]="#ffdd33"
+theme[cached_end]="#73d936"
+
+theme[available_start]="#f43841"
+theme[available_mid]="#ffdd33"
+theme[available_end]="#73d936"
+
+theme[used_start]="#73d936"
+theme[used_mid]="#ffdd33"
+theme[used_end]="#f43841"
+
+theme[download_start]="#73d936"
+theme[download_mid]="#ffdd33"
+theme[download_end]="#73d936"
+
+theme[upload_start]="#ffdd33"
+theme[upload_mid]="#f43841"
+theme[upload_end]="#f43841"
+
+theme[process_start]="#73d936"
+theme[process_mid]="#f43841"
+theme[process_end]="#f43841"
+

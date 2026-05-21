@@ -1,0 +1,157 @@
+/* Color variables synced with Omarchy / Catppuccin Mocha base */
+@define-color background      rgba(0, 0, 0, 0.5);
+@define-color waybarBg        rgba(17, 17, 27, 0.6); /* #11111b at 60% opacity */
+@define-color foreground      #e6e6e6;
+@define-color surface         #313244;
+@define-color inactive        #45475a;
+
+/* Omarchy Accent Colors */
+@define-color accent_orange   #fab387; /* Clock/Border Orange */
+@define-color accent_green    #a6e3a1; /* Wifi/Music Green */
+@define-color accent_blue     #89b4fa; /* Menu Blue */
+@define-color accent_pink     #f38ba8; /* Active/Critical Pink */
+@define-color accent_critical #f38ba8;
+
+#waybar {
+  background-color: @waybarBg;
+  border-bottom: 1px solid alpha(@inactive, 0.3);
+}
+
+/* Tooltips updated to match #11111b base */
+tooltip {
+  background: #11111b;
+  border-radius: 10px;
+  border: 1px solid @accent_orange;
+}
+
+tooltip label {
+  color: @foreground;
+}
+ /* -----------------------------------------------------
+   Global Reset
+   ----------------------------------------------------- */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+/* -----------------------------------------------------
+   Main Bar Window
+   ----------------------------------------------------- */
+window#waybar {
+    background-color: #11111b;
+    color: #cdd6f4;
+    border-bottom: 0px solid #fab387; /* Omarchy Peach Border */
+}
+
+/* -----------------------------------------------------
+   Workspaces
+   ----------------------------------------------------- */
+#workspaces button {
+    padding: 0 10px;
+    color: #6c7086;
+    background: transparent;
+    border-bottom: 3px solid transparent; 
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #fab387; /* Peach Active */
+    border-bottom: 3px solid #fab387;
+    background: rgba(250, 179, 135, 0.1);
+}
+
+#workspaces button.active label {
+    color: #fab387; /* Peach Active */
+    background: #000;
+}
+
+/* -----------------------------------------------------
+   Module Styling
+   ----------------------------------------------------- */
+#custom-arch { 
+    color: #89b4fa; 
+    padding-left: 12px; 
+    padding-right: 15px; 
+    font-size: 18px; 
+    transition: all 0.3s ease;
+}
+
+#custom-arch:hover {
+    background: rgba(137, 180, 250, 0.15);
+    border-radius: 0px 12px 12px 0px; /* Rounded only on the right side for the edge icon */
+}
+
+#custom-window_info { 
+    color: #b4befe; 
+    font-weight: bold; 
+    padding: 0 8px; 
+}
+
+/* -----------------------------------------------------
+   Modules (Clock, Audio, Network, etc.)
+   ----------------------------------------------------- */
+#clock, 
+#pulseaudio, 
+#network, 
+#custom-weather {
+    padding: 0 10px;
+    margin: 4px 2px; 
+    border-radius: 12px; 
+    transition: all 0.3s ease;
+}
+
+#clock:hover, 
+#pulseaudio:hover, 
+#network:hover, 
+#custom-weather:hover {
+    background: rgba(137, 180, 250, 0.15); 
+    border-radius: 12px; 
+}
+
+#clock { color: #cba6f7; font-weight: bold; }
+#pulseaudio { color: #a6e3a1; }
+#network { color: #89dceb; }
+
+/* -----------------------------------------------------
+   Weather Module
+   ----------------------------------------------------- */
+#custom-weather { color: #94e2d5; }
+#custom-weather.offline {
+    color: #f38ba8; 
+    font-weight: bold;
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* -----------------------------------------------------
+   System Module (The "Pill")
+   ----------------------------------------------------- */
+#custom-system { 
+    color: #cdd6f4; 
+    background: rgba(49, 50, 68, 0.5); 
+    border-radius: 12px; 
+    margin: 4px 4px;
+    padding: 0 12px;
+}
+
+/* -----------------------------------------------------
+   TOOLTIPS
+   ----------------------------------------------------- */
+tooltip {
+    background: #11111b; 
+    border: 2px solid #fab387; 
+    border-radius: 8px; 
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font";
+    padding: 16px; 
+}

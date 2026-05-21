@@ -164,3 +164,6 @@ activate() {
 
 export ANDROID_HOME=/opt/android-sdk
 export TERMINAL=ghostty
+autoload bashcompinit
+bashcompinit
+source "/home/lone/.local/share/bash-completion/completions/am"

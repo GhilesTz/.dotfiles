@@ -80,6 +80,7 @@ window#waybar {
   min-width: 20px;
   margin: 0px 10px 0px 6px;
   font-size: 18px;
+  border-radius: 100%;
   color: @foreground;
 }
 

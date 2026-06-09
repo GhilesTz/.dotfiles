@@ -5,6 +5,7 @@
 local map = vim.keymap.set
 
 map("n", "<C-d>", ":bd<CR>", { noremap = true, silent = true, desc = "Close current buffer" })
+map("i", "<C-l>", "<C-o>x", { noremap = true, silent = true, desc = "Close current buffer" })
 
 map("n", "<leader>U", vim.cmd.UndotreeToggle)
 

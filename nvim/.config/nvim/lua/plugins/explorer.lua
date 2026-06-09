@@ -49,8 +49,16 @@ return {
     -- enabled = false,
     ---@module 'oil'
     ---@type oil.SetupOpts
+
     opts = {
+
       default_file_explorer = true,
+      columns = {
+        -- "icon",
+        -- "permissions",
+        -- "size",
+        -- "mtime",
+      },
       keymaps = {
         ["<C-l>"] = "actions.select",
         ["g?"] = { "actions.show_help", mode = "n" },
@@ -63,15 +71,15 @@ return {
         ["<leader>ref"] = { "actions.refresh", mode = "n" },
         ["-"] = { "actions.parent", mode = "n" },
         ["_"] = { "actions.open_cwd", mode = "n" },
-        ["`"] = { "actions.cd", mode = "n" },
-        ["g~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
+        ["<leader>cd"] = { "actions.cd", mode = "n" },
         ["gs"] = { "actions.change_sort", mode = "n" },
         ["gx"] = "actions.open_external",
         ["g."] = { "actions.toggle_hidden", mode = "n" },
-        ["g\\"] = { "actions.toggle_trash", mode = "n" },
       },
     },
 
+    skip_confirm_for_simple_edits = true,
+    -- show_hidden = true,
     keys = {
       {
         "<leader>e",

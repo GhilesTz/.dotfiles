@@ -3,11 +3,11 @@
   "logo": {
     "source": "~/.config/fastfetch/arch.txt",
     "color": {
-      "1": "#fff"
+      "1": "#eee"
     },
     "padding": {
-      "top": 7,
-      "bottom": 7,
+      "top": 1,
+      "bottom": 1,
       "right": 3,
       "left": 11
     }
@@ -16,12 +16,6 @@
     "separator": " "
   },
   "modules": [
-    "break",
-    "break",
-    "break",
-    "break",
-    "break",
-    "break",
     "break",
     {
       "type": "custom",
@@ -70,17 +64,15 @@
       "keyColor": "#eee"
     },
     {
+      "type": "command",
+      "key": "│ 󱦟 OS Age  │",
+      "keyColor": "#eee",
+      "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
+    },
+    {
       "type": "custom",
       "key": "╰───────────╯",
       "keyColor": "#eee"
     },
-    "break",
-    "break",
-    "break",
-    "break",
-    "break",
-    "break",
-    "break",
-    "break",
   ]
 }

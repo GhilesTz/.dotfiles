@@ -1,6 +1,7 @@
 return {
   {
     "borisbrodski/nvim-highlight-hero",
+    -- enabled = false,
     config = function()
       require("nvim-highlight-hero").setup({
         keymaps = {
@@ -17,6 +18,7 @@ return {
 
   {
     "brenoprata10/nvim-highlight-colors",
+    -- enabled = false,
     config = function()
       require("blink.cmp").setup({
         completion = {

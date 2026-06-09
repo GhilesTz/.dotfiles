@@ -9,6 +9,7 @@ return {
   },
   {
     "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
     main = "ibl",
     opts = function(_, opts)
       opts = require("indent-rainbowline").make_opts(opts)

@@ -45,7 +45,7 @@ preexec() { echo -ne '\e[1 q' ;} # Use beam shape cursor for each new prompt.
 source ~/.local/share/omarchy/default/bash/aliases
 
 alias nv='neovide'
-alias e='neovide . >/dev/null 2>&1 &'
+alias please='sudo'
 alias vid='mpv --target-colorspace-hint-mode=source'
 alias bluetooth='bluetui'
 alias wifi='impala'
@@ -72,7 +72,6 @@ eval "$(zoxide init zsh)"
 
 
 
-export PATH="$HOME/vcpkg:$PATH"
 
 
 # pnpm
@@ -130,7 +129,7 @@ cdf() {
   else
     cd $DIRECTORY
     activate
-    e
+    $EDITOR .
     echo "Happy Coding"
   fi
 }
@@ -142,7 +141,7 @@ conf() {
     echo "please chose something"
   else
     cd "$XDG_CONFIG_HOME/$FOLDER"
-    e
+    $EDITOR .
   fi
 }
 
@@ -163,7 +162,17 @@ activate() {
 }
 
 export ANDROID_HOME=/opt/android-sdk
-export TERMINAL=ghostty
+
 autoload bashcompinit
 bashcompinit
 source "/home/lone/.local/share/bash-completion/completions/am"
+
+# Allow Ctrl-z to toggle between suspend and resume
+function Resume {
+  fg
+  zle push-input
+  BUFFER=""
+  zle accept-line
+}
+zle -N Resume
+bindkey "^Z" Resume

@@ -1,6 +1,6 @@
 {
   "Boilerplate Component": {
-    "prefix": "basic",
+    "prefix": "#cp",
     "description": "Basic cpp boilerplate",
     "body": [
       "#include <iostream>",
@@ -8,7 +8,11 @@
       "using namespace std;",
       "",
       "int main(void) {",
+      "  ios::sync_with_stdio(0);",
+      "  cin.tie(0);",
+      "",
       "  $1",
+      "",
       "  return 0;",
       "}"
     ]

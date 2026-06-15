@@ -1,4 +1,5 @@
 return {
+  { "typicode/bg.nvim", lazy = false },
   {
     "Mofiqul/vscode.nvim",
   },
@@ -49,6 +50,7 @@ return {
   -- or you can return new options to override all the defaults
   {
     "nvim-lualine/lualine.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = function()
       return {

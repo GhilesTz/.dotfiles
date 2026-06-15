@@ -3,7 +3,7 @@
   background: @background;
   border-radius: 0;
   min-height: 0;
-  font-family: 'JetBrainsMono Nerd Font';
+  font-family: '0xProto Nerd Font';
   font-size: 12px;
   font-weight: 700;
 }
@@ -91,7 +91,7 @@ window#waybar {
 
 tooltip {
   color: @foreground;
-  font-family: 'JetBrainsMono Nerd Font';
+  font-family: '0xProto Nerd Font';
   padding: 2px;
 }
 
@@ -203,3 +203,17 @@ tooltip {
 }
 
 @import "../omarchy/current/theme/waybar.css";
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
+
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
+}

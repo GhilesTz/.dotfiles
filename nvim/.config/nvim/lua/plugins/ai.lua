@@ -1,31 +1,7 @@
 return {
-  -- {
-  --   "sudo-tee/opencode.nvim",
-  --   -- enabled = false,
-  --   config = function()
-  --     -- Default configuration with all available options
-  --     require("opencode").setup()
-  --   end,
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     {
-  --       "MeanderingProgrammer/render-markdown.nvim",
-  --       opts = {
-  --         anti_conceal = { enabled = false },
-  --         file_types = { "markdown", "opencode_output" },
-  --       },
-  --       ft = { "markdown", "Avante", "copilot-chat", "opencode_output" },
-  --     },
-  --     -- Optional, for file mentions and commands completion, pick only one
-  --     "saghen/blink.cmp",
-  --
-  --     -- Optional, for file mentions picker, pick only one
-  --     "folke/snacks.nvim",
-  --   },
-  -- },
   {
     "nickjvandyke/opencode.nvim",
-    -- enabled = false,
+    enabled = false,
     version = "*", -- Latest stable release
     dependencies = {
       {

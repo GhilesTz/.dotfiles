@@ -13,16 +13,5 @@
 --   return vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null") ~= ""
 -- end
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    local arg = vim.fn.argv(0)
-    if arg ~= "" and vim.fn.isdirectory(arg) == 1 then
-      vim.cmd("cd " .. arg)
-    end
-
-    local path = vim.fn.expand("%:p")
-    if vim.fn.isdirectory(path) == 1 then
-      Snacks.picker.files()
-    end
-  end,
-})
+vim.cmd([[ autocmd RecordingEnter * set cmdheight=1 ]])
+vim.cmd([[ autocmd RecordingLeave * set cmdheight=0 ]])

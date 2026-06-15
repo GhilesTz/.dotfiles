@@ -9,6 +9,7 @@ vim.g.lazyvim_picker = "snacks"
 vim.opt.wrap = false
 vim.g.snacks_animate = false
 vim.g.minianimate_disable = true
+vim.o.laststatus = 3
 
 vim.o.virtualedit = "all"
 
@@ -51,11 +52,3 @@ if vim.g.neovide then
     vim.cmd("startinsert")
   end, 0)
 end
-
-vim.defer_fn(function()
-  require("lualine").hide({
-    place = { "statusline", "tabline", "winbar" }, -- The segment this change applies to.
-    unhide = false, -- whether to re-enable lualine again/
-  })
-  vim.o.laststatus = 0
-end, 0)

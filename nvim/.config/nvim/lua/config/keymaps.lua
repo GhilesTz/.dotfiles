@@ -10,31 +10,31 @@ map("i", "<C-l>", "<C-o>x", { noremap = true, silent = true, desc = "Close curre
 map("n", "<leader>U", vim.cmd.UndotreeToggle)
 
 -- harpoon
-map("n", "<leader>q", ":lua require('harpoon.mark').add_file()<CR>", { desc = "Add to harpoon list" })
-map("n", "<leader>m", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Open harpoon menu" })
+-- map("n", "<leader>q", ":lua require('harpoon.mark').add_file()<CR>", { desc = "Add to harpoon list" })
+-- map("n", "<leader>m", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Open harpoon menu" })
 
-map("n", "<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", { desc = "Harpoon navigate to file 1" })
-map("n", "<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", { desc = "Harpoon navigate to file 2" })
-map("n", "<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Harpoon navigate to file 3" })
-map("n", "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Harpoon navigate to file 4" })
-map("n", "<leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>", { desc = "Harpoon navigate to file 5" })
-map("n", "<leader>6", ":lua require('harpoon.ui').nav_file(6)<CR>", { desc = "Harpoon navigate to file 6" })
-map("n", "<leader>7", ":lua require('harpoon.ui').nav_file(7)<CR>", { desc = "Harpoon navigate to file 7" })
-map("n", "<leader>8", ":lua require('harpoon.ui').nav_file(8)<CR>", { desc = "Harpoon navigate to file 8" })
-map("n", "<leader>9", ":lua require('harpoon.ui').nav_file(9)<CR>", { desc = "Harpoon navigate to file 9" })
-map("n", "<leader>0", ":lua require('harpoon.ui').nav_file(10)<CR>", { desc = "Harpoon navigate to file 10" })
+-- map("n", "<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", { desc = "Harpoon navigate to file 1" })
+-- map("n", "<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", { desc = "Harpoon navigate to file 2" })
+-- map("n", "<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Harpoon navigate to file 3" })
+-- map("n", "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Harpoon navigate to file 4" })
+-- map("n", "<leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>", { desc = "Harpoon navigate to file 5" })
+-- map("n", "<leader>6", ":lua require('harpoon.ui').nav_file(6)<CR>", { desc = "Harpoon navigate to file 6" })
+-- map("n", "<leader>7", ":lua require('harpoon.ui').nav_file(7)<CR>", { desc = "Harpoon navigate to file 7" })
+-- map("n", "<leader>8", ":lua require('harpoon.ui').nav_file(8)<CR>", { desc = "Harpoon navigate to file 8" })
+-- map("n", "<leader>9", ":lua require('harpoon.ui').nav_file(9)<CR>", { desc = "Harpoon navigate to file 9" })
+-- map("n", "<leader>0", ":lua require('harpoon.ui').nav_file(10)<CR>", { desc = "Harpoon navigate to file 10" })
 
-map("n", "<leader>tt", require("toggle").toggle, { desc = "Toggle word" })
+-- map("n", "<leader>tt", require("toggle").toggle, { desc = "Toggle word" })
 
-map("t", "<C-a>", "<C-\\><C-n>", { desc = "get out from terminal mode" })
+-- map("t", "<C-a>", "<C-\\><C-n>", { desc = "get out from terminal mode" })
 
-map("n", "<leader>ls", function()
-  if vim.o.laststatus == 0 then
-    vim.o.laststatus = 3
-  else
-    vim.o.laststatus = 0
-  end
-end, { desc = "Toggle Status Line (LastStatus)" })
+-- map("n", "<leader>ls", function()
+--   if vim.o.laststatus == 0 then
+--     vim.o.laststatus = 3
+--   else
+--     vim.o.laststatus = 0
+--   end
+-- end, { desc = "Toggle Status Line (LastStatus)" })
 
 vim.keymap.set("n", "<leader>cd", function()
   local dir = vim.fn.expand("%:p:h")

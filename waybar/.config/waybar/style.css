@@ -1,208 +1,106 @@
+@import "../omarchy/current/theme/waybar.css";
+
 * {
+  background-color: @background;
   color: @foreground;
-  background: @background;
+
+  border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: '0xProto Nerd Font';
+  font-family: 'JetBrainsMono Nerd Font';
   font-size: 12px;
-  font-weight: 700;
 }
 
-window#waybar {
-    background: @background;
-    color: @foreground;
-    border-bottom: 2px solid @base;
+.modules-left {
+  margin-left: 8px;
 }
 
-.modules-left {}
-
-.modules-right {}
-
-#workspaces {
-  border-radius: 0px;
-  background: @background;
-  margin-right: 10px;
+.modules-right {
+  margin-right: 8px;
 }
 
 #workspaces button {
-  background: @foreground;
   all: initial;
-  padding: 0 8px;
-  margin: 0 2px;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
 }
 
-#workspaces button label {
-  background: @background;
-  color: @foreground;
-  /* font-size: 10; */
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
-#workspaces button.active {
-  background: @foreground;
-}
-#workspaces button.active label {
-  background: @foreground;
-  color: @background;
-  font-size: 15;
-  font-weight: 900;
+#cpu,
+#battery,
+#pulseaudio,
+#custom-omarchy,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
 }
 
 #tray {
-  color: @foreground;
-  min-width: 0px;
-  transition: min-width 0.2s ease, opacity 0.2s ease;
-  opacity: 0;
+  margin-right: 16px;
 }
 
-#tray:hover {
-  min-width: 150px;
-  opacity: 1;
+#bluetooth {
+  margin-right: 17px;
 }
 
-#tray,
-#cpu,
-#network,
-#pulseaudio {
-  min-width: 12px;
-  margin: 0 7.5px;
-  color: @yellow;
-}
-
-
-#clock {
-  color: @foreground;
-  /* background : @sapphire; */
-  /* border-radius: 5px; */
-  padding: 0 10px;
-}
-
-#custom-arch {
-  min-width: 20px;
-  margin: 0px 10px 0px 6px;
-  font-size: 18px;
-  border-radius: 100%;
-  color: @foreground;
+#network {
+  margin-right: 13px;
 }
 
 #custom-expand-icon {
-  margin-right: 7px;
-  color: @foreground;
+  margin-right: 18px;
 }
 
 tooltip {
-  color: @foreground;
-  font-family: '0xProto Nerd Font';
   padding: 2px;
 }
 
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  margin-left: 8.75px;
+}
+
+#custom-weather {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  min-width: 14px;
+}
+
+#custom-weather.unavailable {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
 
 .hidden {
   opacity: 0;
 }
 
-#custom-seperator {
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+  min-width: 12px;
+  margin-left: 5px;
+  margin-right: 0;
+  font-size: 10px;
+  padding-bottom: 1px;
 }
 
-#cpu {
-  color: @foreground;
-  /* color: @text; */
-  margin-right: 10px;
+#custom-screenrecording-indicator.active {
+  color: #a55555;
 }
 
-#idle_inhibitor {
-  font-size: 15px;
-  margin-right: 8;
-  margin-left: 8;
-  color: @foreground;
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+  color: #a55555;
 }
-
-#custom-wallpaper {
-  /* font-size : 15px; */
-  margin-right: 8px;
-  margin-left: 8px;
-}
-
-
-#custom-gh {
-  margin-right: 10px;
-  margin-left: 10px;
-  font-size: 8px;
-}
-
-#memory {
-  margin-right: 10px;
-  color: @foreground;
-}
-
-
-#temperature {
-  color: @foreground;
-  margin-left: 6px;
-}
-
-#backlight {
-  color: @foreground;
-  margin-right: 10px;
-}
-
-#pulseaudio{
-  color: @foreground;
-}
-
-#network {
-  color: @foreground;
-  margin-right: 10px;
-}
-
-#network.speed {
-  color: @foreground;
-}
-
-#battery {
-  color: @foreground;
-  padding: 0 8px;
-  margin-left: 2px;
-}
-
-#battery.charging {
-  background: #aeffae;
-  color: #000000;
-}
-
-#battery.good:not(.charging) {
-  background: @background;
-  color: @foreground;
-}
-
-#battery.warning:not(.charging) {
-  background: #eeae9e;
-  color: @mantle;
-}
-
-#battery.low:not(.charging) {
-  background: #ef2242;
-  color: #fff;
-}
-
-#battery.critical:not(.charging) {
-  background: #ff2222;
-  color: #fff;
-  /* Text */
-  animation-name: blink;
-  animation-duration: 0.75s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  border-radius: 6px;
-}
-
-@keyframes blink {
-  to {
-    background: @background;
-  }
-}
-
-@import "../omarchy/current/theme/waybar.css";
 
 #custom-voxtype {
   min-width: 12px;
@@ -213,7 +111,79 @@ tooltip {
   color: #a55555;
 }
 
-#custom-idle-indicator.active,
-#custom-notification-silencing-indicator.active {
-  color: #a55555;
+.left .modules-left, .right .modules-left { margin: 8px 0 0 0; }
+.left .modules-right, .right .modules-right { margin: 0 0 8px 0; }
+
+.left #workspaces button, .right #workspaces button {
+  padding: 6px 0;
+  margin: 1.5px 0;
+}
+
+.left #cpu, .right #cpu,
+.left #battery, .right #battery,
+.left #pulseaudio, .right #pulseaudio,
+.left #custom-omarchy, .right #custom-omarchy,
+.left #custom-update, .right #custom-update {
+  margin: 1.5px 0;
+  padding: 6px 0;
+  min-width: 0;
+  min-height: 12px;
+}
+
+.left #tray, .right #tray { margin: 0 0 16px 0; }
+.left #bluetooth, .right #bluetooth { margin: 1.5px 0; padding: 6px 0; min-height: 12px; }
+.left #network, .right #network { margin: 1.5px 0; padding: 6px 0; min-height: 12px; }
+.left #custom-expand-icon, .right #custom-expand-icon { margin: 1.5px 0; padding: 6px 0; min-height: 12px; }
+.left #clock, .right #clock { margin: 8.75px 0 0 0; }
+.left #custom-weather, .right #custom-weather { margin: 1.5px 0; padding: 6px 0; min-height: 12px; min-width: 14px; margin-right: 4px; }
+
+.left #custom-screenrecording-indicator, .right #custom-screenrecording-indicator,
+.left #custom-idle-indicator, .right #custom-idle-indicator,
+.left #custom-notification-silencing-indicator, .right #custom-notification-silencing-indicator {
+  margin: 5px 0 0 0;
+  min-width: 0;
+  min-height: 12px;
+}
+
+.left #custom-voxtype, .right #custom-voxtype { margin: 7.5px 0 0 0; min-width: 0; min-height: 12px; }
+
+#custom-expand-icon.vertical,
+.left #custom-expand-icon.horizontal,
+.right #custom-expand-icon.horizontal {
+  opacity: 0;
+  font-size: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.left #custom-expand-icon.vertical,
+.right #custom-expand-icon.vertical {
+  opacity: 1;
+  font-size: inherit;
+  min-width: 0;
+  min-height: 12px;
+  margin: 1.5px 0;
+  padding: 6px 0;
+}
+
+#clock.vertical,
+.left #clock.horizontal,
+.right #clock.horizontal {
+  opacity: 0;
+  font-size: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.left #clock.vertical,
+.right #clock.vertical {
+  opacity: 1;
+  font-size: inherit;
+  min-width: 0;
+  min-height: 12px;
+  margin: 8.75px 0 0 0;
 }

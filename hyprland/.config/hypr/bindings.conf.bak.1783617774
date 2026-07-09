@@ -1,0 +1,106 @@
+# Application bindings
+$terminal = uwsm-app -- xdg-terminal-exec
+$browser = omarchy-launch-browser
+
+bindd = SUPER ALT, RETURN, Tmux, exec, uwsm-app -- xdg-terminal-exec --dir="$(omarchy-cmd-terminal-cwd)" tmux new
+bindd = SUPER, E, File manager, exec, thunar
+bindd = SUPER, R, Rnote, exec, uwsm-app -- rnote
+bindd = SUPER, B, Browser, exec, $browser
+bindd = SUPER SHIFT, M, Music, exec, omarchy-launch-or-focus spotify
+bindd = SUPER SHIFT ALT, M, Music TUI, exec, omarchy-launch-or-focus-tui cliamp
+bindd = SUPER SHIFT, N, Editor, exec, omarchy-launch-editor
+bindd = SUPER SHIFT, D, Docker, exec, omarchy-launch-tui lazydocker
+bindd = SUPER SHIFT, O, Obsidian, exec, omarchy-launch-or-focus "^obsidian$" "uwsm-app -- obsidian"
+
+# bindd = SUPER SHIFT, SLASH, Passwords, exec, uwsm-app -- 1password
+bindd = SUPER ALT, C, Launch Calculator, exec, uwsm-app -- gnome-calculator
+
+
+# If your web app url contains #, type it as ## to prevent hyperland treat it as comments
+bindd = SUPER SHIFT, A, ChatGPT, exec, omarchy-launch-webapp "https://chatgpt.com"
+bindd = SUPER SHIFT, B, Bluetooth, exec, omarchy-launch-tui bluetui
+bindd = SUPER SHIFT, T, Telegram, exec, uwsm-app -- Telegram
+bindd = SUPER SHIFT, W, Wifi, exec, omarchy-launch-tui impala
+bindd = SUPER SHIFT, C, Classroom, exec, omarchy-launch-webapp "https://classroom.google.com/u/1/?authuser=1"
+bindd = SUPER SHIFT, E, Email, exec, omarchy-launch-webapp "https://mail.google.com/mail/u/0/##inbox"
+bindd = SUPER ALT, E, Email (school), exec, omarchy-launch-webapp "https://mail.google.com/mail/u/1/##inbox"
+bindd = SUPER SHIFT, Y, YouTube, exec, omarchy-launch-webapp "https://youtube.com/"
+bindd = SUPER SHIFT, X, X, exec, omarchy-launch-webapp "https://x.com/"
+unbind = SUPER CTRL, T
+bindd = SUPER CTRL, T, Todo List, exec, xdg-terminal-exec --app-id=TUI.float -e $HOME/opt/todo
+unbind = SUPER CTRL, H
+bindd = SUPER CTRL, H, Manual, exec, xdg-terminal-exec --app-id=TUI.float batman
+bindd = SUPER CTRL, P, Open Notes, exec, xdg-terminal-exec --app-id=TUI.float vim "/home/lone/notes/random.md"
+
+bindd = SHIFT CTRL, PRINT, Color Picker, exec, hyprpicker | wl-copy
+bindd = SHIFT, PRINT, Print screen to clipboard, exec, omarchy-capture-screenshot smart copy
+unbind = SUPER, SPACE
+bindd = SUPER, SUPER_L, Omarchy menu, exec, walker
+bindd = SUPER CTRL, G, Omarchy Projects, exec, ~/opt/git-projects-menu
+
+unbind = SUPER, P
+bindd = SUPER, P, Power Profiles, exec, omarchy-menu power
+
+unbind = SUPER ALT, F4
+
+unbind = SUPER, H
+unbind = SUPER, L
+unbind = SUPER, K
+unbind = SUPER, J
+
+bindd = SUPER, H, exec, movefocus, l
+bindd = SUPER, L, exec, movefocus, r
+bindd = SUPER, K, exec, movefocus, u
+bindd = SUPER, J, exec, movefocus, d
+
+unbind = SUPER, LEFT
+unbind = SUPER, RIGHT
+unbind = SUPER, UP
+unbind = SUPER, DOWN
+
+bindd = SUPER, LEFT, exec, movewindow, l
+bindd = SUPER, RIGHT, exec, movewindow, r
+bindd = SUPER, UP, exec, movewindow, u
+bindd = SUPER, DOWN, exec, movewindow, d
+
+bindd = SUPER SHIFT, h, exec, movewindow, l
+bindd = SUPER SHIFT, j, exec, movewindow, r
+bindd = SUPER SHIFT, k, exec, movewindow, u
+bindd = SUPER SHIFT, l, exec, movewindow, d
+
+
+bindd = SUPER, Q, Open Favorite Terminal,exec, $terminal
+
+bindd = SUPER CTRL, K, Show Keybinds, exec, omarchy-menu-keybindings
+
+
+bindd = SUPER, M, Toggle window split, layoutmsg, togglesplit
+
+
+unbind = SUPER SHIFT, N
+bindd = SUPER SHIFT, N, Open Neovide, exec, neovide
+
+binds {
+    workspace_back_and_forth = true
+}
+
+bindd = SUPER, S, Goto to Coding Workspace, workspace, 99
+bindd = SUPER SHIFT, S, Move Window to Scratchpad, movetoworkspace, 99
+
+
+# Volume
+# bindel = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
+# bindel = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# bindel = ALT , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+
+# bindel = ALT , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
+
+# bindl  = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# Media
+# bindl = , XF86AudioPlay, exec, playerctl play-pause
+# bindl = , XF86AudioNext, exec, playerctl next
+# bindl = , XF86AudioPrev, exec, playerctl previous
+
+
+bind = SUPER, Pause, exec, hyprctl switchxkblayout all next

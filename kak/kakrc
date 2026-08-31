@@ -1,0 +1,85 @@
+colorscheme kanagawa
+
+add-highlighter global/ number-lines
+
+set-option global tabstop 2
+set-option global indentwidth 2
+
+hook global BufOpenFile .* smarttab
+hook global BufNewFile  .* smarttab
+
+map global normal '#' ':comment-line<ret>'
+map global normal '<a-#>' ':comment-block<ret>'
+map global normal '.' '<a-:>H<a-;>L<a-:>'
+map global normal '<a-.>' '<a-:>L<a-;>H<a-:>'
+map global normal '<a-x>' 'x_'
+
+
+
+define-command config %{
+	e ~/.config/kak/kakrc
+}
+
+set-option global	ui_options \
+	'kakodemon_font=JetBrains	Mono 16' \
+	'kakodemon_font_content=JetBrains	Mono 24' \
+	'kakodemon_color_red=rgb:FF5555' \
+	'kakodemon_color_green=rgb:50FA7B' \
+	'kakodemon_color_border=rgb:44475A'
+
+
+source "%val{config}/scripts/smarttab.kak"
+source "%val{config}/scripts/yazi.kak"
+source "%val{config}/scripts/emacs.kak"
+source "%val{config}/scripts/render-markdown.kak"
+source "%val{config}/scripts/md-tools.kak"
+
+
+hook global WinSetOption filetype=markdown %{
+  render-markdown-enable
+}
+
+
+map global user -docstring 'Open yazi in buffer directory' 'e' ':yazi<ret>'
+map global user -docstring 'Open yazi in current directory' 'E' ':yazi-root<ret>'
+
+
+# tab for indenting and completion
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+            unmap window insert <tab> <c-n>
+            unmap window insert <s-tab> <c-p>
+        }
+    }
+}
+
+
+# Remove autocompletion behaviour by default
+set-option global autocomplete prompt
+
+define-command toggle-insert-completion %{
+    evaluate-commands %sh{
+        case "$kak_opt_autocomplete" in
+            *insert*) echo 'set-option window autocomplete prompt' ;;
+            *)        echo 'set-option window autocomplete insert|prompt' ;;
+        esac
+    }
+}
+
+# <c-space> to toggle autocomplete
+map global insert <c-space> "<esc>:toggle-insert-completion<ret>i"
+
+
+# find file using fd command
+define-command find -docstring 'find files using fd command' %{
+}
+
+
